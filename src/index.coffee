@@ -1,4 +1,5 @@
 child_process = require 'child_process'
+spawn = child_process.spawn
 fs = require 'fs'
 sysPath = require 'path'
 
@@ -20,6 +21,7 @@ module.exports = class CompassCompiler
         console.error @config.paths.compass
 
     configPath = sysPath.join process.cwd(), @config.paths.compass
-
-    child_process.exec "compass watch --config #{configPath}", (error, stdout, stderr) ->
-      console.log "exec error: " + error  if error isnt null
+    
+    watch = spawn 'compass', ['watch']
+    watch.stdout.on 'data', (data) =>
+        console.log '' + data
