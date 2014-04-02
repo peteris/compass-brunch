@@ -1,6 +1,6 @@
 ## compass-brunch
 Adds Compass support to
-[brunch](http://brunch.io).
+[brunch](http://brunch.io). Forked from [git@github.com:anthonyshort/compass-brunch.git](anthonyshort)
 
 ## Usage
 Add `"compass-brunch": "x.y.z"` to `package.json` of your brunch app.
